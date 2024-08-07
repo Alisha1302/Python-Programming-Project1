@@ -1,0 +1,61 @@
+class QuizGame:
+  def __init__(self):
+      self.questions = [
+          {
+              "question": "Where is India's Silicon Valley located?",
+              "options": ["A) Pune", "B) Bangalore", "C) Delhi", "D) Hyderabad"],
+              "answer": "B"
+          },
+          {
+              "question": "Which planet is known as the Red Planet?",
+              "options": ["A) Earth", "B) Mars", "C) Jupiter", "D) Saturn"],
+              "answer": "B"
+          },
+          {
+              "question": "What company was originally called 'Cadabra'?",
+              "options": ["A) Zomato", "B) Swiggy", "C) Amazon", "D) Flipkart"],
+              "answer": "C"
+          },
+          {
+              "question": "What is the name of the largest rainforest in the world?",
+              "options": ["A) Sundaland", "B) Amazon rainforest", "C) Congo Rainforest", "D) Sundarban"],
+              "answer": "B"
+          },
+          {
+              "question": "What is the name of the oldest country in the world?",
+              "options": ["A) China", "B) Germany", "C) United states", "D) France"],
+              "answer": "A"
+          }
+      ]
+      self.score = 0
+
+  def ask_question(self, question):
+      print(question["question"])
+      for option in question["options"]:
+          print(option)
+      while True:
+          user_answer = input("Please enter the letter of your answer: ").upper()
+          if user_answer in ['A', 'B', 'C', 'D']:
+              break
+          else:
+              print("Invalid input. Please enter A, B, C, or D.")
+      return user_answer
+
+  def check_answer(self, user_answer, correct_answer):
+      if user_answer == correct_answer:
+          print("Correct!")
+          self.score += 1
+      else:
+          print(f"Incorrect! The correct answer was {correct_answer}.")
+
+  def play(self):
+      print("Welcome to the Quiz Game!")
+      for question in self.questions:
+          user_answer = self.ask_question(question)
+          self.check_answer(user_answer, question["answer"])
+          print()
+      print(f"Your final score is {self.score}/{len(self.questions)}")
+
+if __name__ == "__main__":
+  game = QuizGame()
+  game.play()
