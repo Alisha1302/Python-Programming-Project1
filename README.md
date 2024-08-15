@@ -6,4 +6,4 @@ Enhance user interaction by allowing them to input their answers.
 Reinforce Python fundamentals, including data structures, control flow, and user input
 handling.
 Gain practical experience in structuring a small Python project.
-https://replit.com/join/lpzzmlxsvq-alishakhatun1  (Replit private project link)
+https://replit.com/@AlishaKhatun1/Pythonproject1#main.py (Replit private project link)
